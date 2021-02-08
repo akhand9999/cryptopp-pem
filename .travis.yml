@@ -29,51 +29,18 @@ jobs:
       dist: bionic
     - name: Ubuntu Bionic, GCC, arm64
       os: linux
-      arch: arm64
+      arch: arm64-graviton2
+      virt: lxd
+      group: edge
       compiler: gcc
       dist: bionic
     - name: Ubuntu Bionic, Clang, arm64
       os: linux
-      arch: arm64
+      arch: arm64-graviton2
+      virt: lxd
+      group: edge
       compiler: clang
       dist: bionic
-    - name: Ubuntu Bionic, GCC, ppc64le
-      os: linux
-      arch: ppc64le
-      compiler: gcc
-      dist: bionic
-    - name: Ubuntu Bionic, Clang, ppc64le
-      os: linux
-      arch: ppc64le
-      compiler: clang
-      dist: bionic
-      env:
-        - CC=clang-8
-        - CXX=clang++-8
-    - name: Ubuntu Bionic, GCC, s390x
-      os: linux
-      arch: s390x
-      compiler: gcc
-      dist: bionic
-    - name: Ubuntu Bionic, Clang, s390x
-      os: linux
-      arch: s390x
-      compiler: clang
-      dist: bionic
-      env:
-        - CC=clang-8
-        - CXX=clang++-8
-    - name: OS X 10, GCC, Xcode 10.1
-      os: osx
-      osx_image: xcode10.1
-      arch: amd64
-      compiler: gcc
-    - name: OS X 10, Clang, Xcode 10.1
-      os: osx
-      osx_image: xcode10.1
-      arch: amd64
-      compiler: clang
-
   allow_failures:
     # Clang has a fair amount of trouble
     # on platforms Apple does not support
